@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import { View, Text, ScrollView, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import SafeView from '../components/SafeView';
@@ -9,6 +9,7 @@ import { freeGames, paidGames, sliderData } from '../model/data'
 import BannerSlider from '../components/BannerSlider';
 import CustomSwitch from '../components/CustomSwitch';
 import ListItem from '../components/ListItem';
+import * as SplashScreen from 'expo-splash-screen';
 
 export default function HomeScreen({ navigation }) {
   const [gamesTab, setGamesTab] = useState(1)
@@ -20,16 +21,32 @@ export default function HomeScreen({ navigation }) {
     setGamesTab(value)
   }
 
-  const [fontsLoaded] = useFonts({
-    'Roboto-Medium': require('../assets/fonts/Roboto-Medium.ttf'),
-  });
+  // const [fontsLoaded] = useFonts({
+  //   RobotoMedium: require('../assets/fonts/Roboto-Medium.ttf'),
+  // });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  // useEffect(() => {
+  //   async function prepare() {
+  //     await SplashScreen.preventAutoHideAsync();
+  //   }
+  //   prepare();
+  // }, []);
+
+  // const onLayoutRootView = useCallback(async () => {
+  //   if (fontsLoaded) {
+  //     await SplashScreen.hideAsync();
+  //   }
+  // }, [fontsLoaded]);
+
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
+
+  // onLayout={onLayoutRootView}
+
 
   return (
-    <SafeView style={{ flex: 1, backgroundColor: '#fff' }}>
+    <SafeView style={{ flex: 1, backgroundColor: '#fff' }} >
       <ScrollView style={{ padding: 20 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10, alignItems: 'center' }}>
           <Text style={{ fontSize: 16, fontweight: 'Roboto-Medium' }}>Hello John Doe</Text>

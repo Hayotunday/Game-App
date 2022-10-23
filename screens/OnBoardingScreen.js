@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import SafeView from '../components/SafeView';
 import GamingImg from '../assets/images/misc/gaming.svg';
-import AppLoading from 'expo-app-loading';
+// import AppLoading from 'expo-app-loading';
 import { MaterialIcons } from '@expo/vector-icons'
+import * as SplashScreen from 'expo-splash-screen';
 
 export default function OnBoardingScreen({ navigation }) {
   // const [fontsLoaded] = useFonts({
-  //   'Roboto-MediumItalic': require('./assets/fonts/Roboto-MediumItalic.ttf'),
+  //   RobotoMediumItalic: require('../assets/fonts/Roboto-MediumItalic.ttf'),
   // });
 
+  // useEffect(() => {
+  //   async function prepare() {
+  //     await SplashScreen.preventAutoHideAsync();
+  //   }
+  //   prepare();
+  // }, []);
+
+  // const onLayoutRootView = useCallback(async () => {
+  //   if (fontsLoaded) {
+  //     await SplashScreen.hideAsync();
+  //   }
+  // }, [fontsLoaded]);
+
   // if (!fontsLoaded) {
-  //   return <AppLoading />;
+  //   return null;
   // }
+
+  // onLayout={onLayoutRootView}
 
   return (
     <SafeView style={{
